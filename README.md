@@ -15,6 +15,7 @@
    ```
    ssh-copy-id elastic; ssh-copy-id prom; ssh-copy-id grafana; ssh-copy-id kibana; ssh-copy-id web-1; ssh-copy-id web-2
    ```
+   ( везде yes, пароль: admin )
 6. На bastion-хосте:
    ```
    git clone <url репозитория с директорией upravlenie_hostami>
