@@ -18,5 +18,5 @@
    ( везде yes, пароль: admin )
 6. На bastion-хосте:
    ```
-   git clone <url репозитория с директорией upravlenie_hostami>
+   git clone https://github.com/GolgoPA/upravlenie_hostami)https://github.com/GolgoPA/upravlenie_hostami
    ```
