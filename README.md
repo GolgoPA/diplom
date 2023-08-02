@@ -44,4 +44,21 @@
    ```
    Раскомментить последние две строки
 
-10. 
+   ```
+   sudo cat /etc/elasticsearch/certs/http_ca.crt
+   ```
+   Скопировать сертификат.
+
+10. На kibana хосте:
+    ```
+    sudo mkdir /etc/kibana/certs
+    ```
+
+    ```
+    sudo nano /etc/kibana/certs/http_ca.crt
+    ```
+    (Вставить скопированный сертификат)
+
+    ```
+    sudo chown -R root:kibana /etc/kibana/certs
+    ```
