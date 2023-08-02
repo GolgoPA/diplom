@@ -20,3 +20,27 @@
    ```
    git clone https://github.com/GolgoPA/upravlenie_hostami
    ```
+7. На бастион хосте:
+   ```
+   cd upravlenie_hostami
+   ```
+8. На бастион хосте:
+   ```
+   ansible-playbook elk.yaml; ansible-playbook mon.yaml; ansible-playbook webs.yaml
+   ```
+9. На elastic хосте:
+    ```
+    sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic -i
+    ```
+    (adminadmin)
+
+   ```
+   sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u kibana_system -i
+   ```
+
+   ```
+   sudo nano /etc/elasticsearch/elasticsearch.yml 
+   ```
+   Раскомментить последние две строки
+
+10. 
