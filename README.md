@@ -29,15 +29,15 @@
    ansible-playbook elk.yaml; ansible-playbook mon.yaml; ansible-playbook webs.yaml
    ```
 9. На elastic хосте:
-    ```
-    sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic -i
-    ```
-(adminadmin)
+   ```
+   sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic -i
+   ```
+   (adminadmin)
 
    ```
    sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u kibana_system -i
    ```
-(adminadmin)
+   (adminadmin)
 
    ```
    sudo nano /etc/elasticsearch/elasticsearch.yml 
