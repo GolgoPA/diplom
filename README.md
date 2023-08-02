@@ -32,11 +32,12 @@
     ```
     sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic -i
     ```
-    (adminadmin)
+(adminadmin)
 
    ```
    sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u kibana_system -i
    ```
+(adminadmin)
 
    ```
    sudo nano /etc/elasticsearch/elasticsearch.yml 
