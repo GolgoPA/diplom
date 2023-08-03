@@ -69,7 +69,7 @@
     Вставить адреса elastic'a и паблик kibana в последние две строки конфига.
 
     ```
-    sudo sysstemctl restart kibana
+    sudo systemctl restart kibana
     ```
 11. На хосте web-1 и web-2:
     ```
