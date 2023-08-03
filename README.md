@@ -62,3 +62,32 @@
     ```
     sudo chown -R root:kibana /etc/kibana/certs
     ```
+
+    ```
+    sudo nano /etc/kibana/kibana.yml
+    ```
+    Вставить адреса elastic'a и паблик kibana в последние две строки конфига.
+
+    ```
+    sudo sysstemctl restart kibana
+    ```
+11. На хосте web-1 и web-2:
+    ```
+    sudo nano /etc/filebeat/filebeat.yml
+    ```
+    Вставить адрес elastic'a и kibana, вставить сертификат.
+
+    ```
+    sudo nano /etc/filebeat/modules.d/nginx.yml.disabled
+    ```
+    Заменить false на true в блоках error и access
+
+    ```
+    sudo systemctl restart filebeat
+    ```
+
+    ```
+    sudo filebeat modules enable nginx
+    ```
+
+    
