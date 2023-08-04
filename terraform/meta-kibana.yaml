@@ -1,0 +1,30 @@
+#cloud-config
+ disable_root: true
+ timezone: Europe/Moscow
+ repo_update: true
+ package_update: true
+ package_upgrade: true
+ apt:
+   preserve_sources_list: true
+ packages:
+  - prometheus-node-exporter  
+  - prometheus-elasticsearch-exporter
+ users:
+  - name: golpa
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC08CZafmwhOejaF/aDJBhWPT6KJeZ1vLVd+rryu7oMl3v7yLAgtMJca5tDI61cv+KA3V4fGi9YeTRUiWeXvvU47xbADb9GXslaA4aM1jj9SjBWXfcUyQFxCVlv/IE/u7o9c0spSzH3QFHMYBrTU912p9LQz8J23+mj0Xsloxz911AqMZVsjyhNIEqJPUWkmOjzjMzcqP5HThmEOEVkoveDmOgVU/20jZEHQsgOAgg66tWzH15AvwIWfjzLihABXQBSGsWnSxfgeGpQkfOBREWbwpsDXHEmg6vGdDhX1r34CPC33YqA9WMeJo+a+mafKEdUBT0gcjehj1lpN4BZC39CaFFLOeithukg1fXtrgAmPwEMxkV+hfb3JBc8kXD688Rw/hyOMRHbqChAerjPjSQnUdB/ulHLIVxnCeb9LSrUcpPxUD8GF8jHF9TRx5Yu9McY7RoBT3V834fCOD1ggOZ1OVnID1Hk3v3DYOialWJf7ZwoUnZBzd051oE5vIPMx70= golpa@#cloud-config
+ users:
+  - name: golpa
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC08CZafmwhOejaF/aDJBhWPT6KJeZ1vLVd+rryu7oMl3v7yLAgtMJca5tDI61cv+KA3V4fGi9YeTRUiWeXvvU47xbADb9GXslaA4aM1jj9SjBWXfcUyQFxCVlv/IE/u7o9c0spSzH3QFHMYBrTU912p9LQz8J23+mj0Xsloxz911AqMZVsjyhNIEqJPUWkmOjzjMzcqP5HThmEOEVkoveDmOgVU/20jZEHQsgOAgg66tWzH15AvwIWfjzLihABXQBSGsWnSxfgeGpQkfOBREWbwpsDXHEmg6vGdDhX1r34CPC33YqA9WMeJo+a+mafKEdUBT0gcjehj1lpN4BZC39CaFFLOeithukg1fXtrgAmPwEMxkV+hfb3JBc8kXD688Rw/hyOMRHbqChAerjPjSQnUdB/ulHLIVxnCeb9LSrUcpPxUD8GF8jHF9TRx5Yu9McY7RoBT3V834fCOD1ggOZ1OVnID1Hk3v3DYOialWJf7ZwoUnZBzd051oE5vIPMx70= golpa@DESKTOP-U7UHP4K
+ chpasswd:
+   list: |
+     golpa:admin
+     root:admin
+   expire: False 
