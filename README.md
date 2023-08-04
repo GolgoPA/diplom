@@ -90,4 +90,11 @@
     sudo filebeat modules enable nginx
     ```
 
-    
+    ```
+    sudo filebeat setup
+    ```
+
+    ```
+    sudo filebeat -e 
+    ```
+12. А
