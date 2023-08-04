@@ -97,4 +97,6 @@
     ```
     sudo filebeat -e 
     ```
-12. А
+12. На хосте prom добавить адреса целевых хостов  в /etc/pormetheus/prometheus.yml
+13. На web-панели grafana установить соединение с prometheus
+14. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/)
