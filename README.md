@@ -86,7 +86,7 @@
     ```
 
     ```
-    sudo nano /etc/prometheus-nginxlog-exporter
+    sudo nano /etc/prometheus-nginxlog-exporter.yml
     ```
     Поменять web-№ на номер сервера.
 
