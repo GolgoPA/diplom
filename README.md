@@ -120,5 +120,7 @@
     sudo systemctl restart prometheus
     ```
     
-16. На web-панели grafana установить соединение с prometheus
-17. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/)
+16. На web-панели grafana установить соединение с prometheus.
+17. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/).
+18. Сделать дашборд для метрик nginxlog-exporter'a.
+19. Сделать визуализацию в kibana.
