@@ -108,6 +108,17 @@
     ```
 
     
-14. На хосте prom добавить адреса целевых хостов  в /etc/pormetheus/prometheus.yml
-15. На web-панели grafana установить соединение с prometheus
-16. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/)
+14. На хосте prom:
+
+    ```
+    sudo nano /etc/pormetheus/prometheus.yml
+    ```
+
+    Вставить адреса целевых хостов в job'aх.
+
+    ```
+    sudo systemctl restart prometheus
+    ```
+    
+16. На web-панели grafana установить соединение с prometheus
+17. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/)
