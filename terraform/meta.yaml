@@ -8,6 +8,7 @@
    preserve_sources_list: true
  packages:
   - nginx
+  - prometheus-node-exporter
  runcmd:
   - [ systemctl, reload, nginx.service ]
   - [ systemctl, enable, nginx.service ]

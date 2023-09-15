@@ -7,7 +7,6 @@
  apt:
    preserve_sources_list: true
  packages:
-  - nginx
   - prometheus-node-exporter  
   - prometheus-elasticsearch-exporter
  users:
