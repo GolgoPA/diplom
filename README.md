@@ -49,6 +49,10 @@
    Раскомментить network_host.
 
    ```
+   sudo systemctl restart elasticsearch
+   ```
+
+   ```
    sudo cp -R /etc/elasticsearch/certs /etc/logstash
    ```
 
