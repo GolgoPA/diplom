@@ -42,14 +42,22 @@
    ```
    sudo nano /etc/elasticsearch/elasticsearch.yml 
    ```
-   Раскомментить последние две строки
+   Раскомментить network_host.
+
+   ```
+   sudo cp -R /etc/elasticsearch/certs /etc/logstash
+   ```
+
+   ```
+   sudo chown -R root:logstash /etc/logstash/certs
+   ```
 
    ```
    sudo cat /etc/elasticsearch/certs/http_ca.crt
    ```
    Скопировать сертификат.
 
-10. На kibana хосте:
+11. На kibana хосте:
     ```
     sudo mkdir /etc/kibana/certs
     ```
@@ -71,32 +79,17 @@
     ```
     sudo systemctl restart kibana
     ```
-11. На хосте web-1 и web-2:
+12. На хосте web-1 и web-2:
     ```
     sudo nano /etc/filebeat/filebeat.yml
     ```
-    Вставить адрес elastic'a и kibana, вставить сертификат.
-
-    ```
-    sudo nano /etc/filebeat/modules.d/nginx.yml.disabled
-    ```
-    Заменить false на true в блоках error и access
+    Вставить адрес elastic.
 
     ```
     sudo systemctl restart filebeat
     ```
 
-    ```
-    sudo filebeat modules enable nginx
-    ```
-
-    ```
-    sudo filebeat setup
-    ```
-
-    ```
-    sudo filebeat -e 
-    ```
-12. На хосте prom добавить адреса целевых хостов  в /etc/pormetheus/prometheus.yml
-13. На web-панели grafana установить соединение с prometheus
-14. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/)
+    
+13. На хосте prom добавить адреса целевых хостов  в /etc/pormetheus/prometheus.yml
+14. На web-панели grafana установить соединение с prometheus
+15. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/)
