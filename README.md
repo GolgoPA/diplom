@@ -111,7 +111,7 @@
 14. На хосте prom:
 
     ```
-    sudo nano /etc/pormetheus/prometheus.yml
+    sudo nano /etc/prometheus/prometheus.yml
     ```
 
     Вставить адреса целевых хостов в job'aх.
