@@ -6,10 +6,14 @@
 2. ```
    ssh <адресс bastion-хоста>
    ```
-3. На bastion-хосте, для удобства, редактирую /etc/hosts, вписываются адреса и желаемые хостенэймы ресурсов.
+3. На bastion-хосте: 
+  ```
+  sudo nano /etc/hosts 
+  ```
+  Вписываются адреса и хостенэймы ресурсов.
 4. На bastion-хосте:
    ```
-    ssh-keygen
+   ssh-keygen
    ```
 5. На bastion-хосте:
    ```
@@ -79,7 +83,7 @@
     ```
     sudo systemctl restart kibana
     ```
-12. На хосте web-1 и web-2:
+12. На хостах web-1 и web-2:
 
     ```
     sudo systemctl daemon-reload
