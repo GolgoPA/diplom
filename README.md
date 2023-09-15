@@ -80,6 +80,19 @@
     sudo systemctl restart kibana
     ```
 12. На хосте web-1 и web-2:
+
+    ```
+    sudo systemctl daemon-reload
+    ```
+
+    ```
+    sudo systemctl restart prometheus-nginxlog-exporter
+    ```
+
+    ```
+    sudo systemctl restart nginx
+    ```
+
     ```
     sudo nano /etc/filebeat/filebeat.yml
     ```
@@ -90,6 +103,6 @@
     ```
 
     
-13. На хосте prom добавить адреса целевых хостов  в /etc/pormetheus/prometheus.yml
-14. На web-панели grafana установить соединение с prometheus
-15. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/)
+14. На хосте prom добавить адреса целевых хостов  в /etc/pormetheus/prometheus.yml
+15. На web-панели grafana установить соединение с prometheus
+16. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/)
