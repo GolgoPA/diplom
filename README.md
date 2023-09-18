@@ -58,6 +58,10 @@
    ```
 
    ```
+   sudo systemctl restart logstash
+   ```
+
+   ```
    sudo cat /etc/elasticsearch/certs/http_ca.crt
    ```
    Скопировать сертификат.
