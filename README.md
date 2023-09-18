@@ -3,36 +3,33 @@
 ---
 
 1. Файлы терраформа лежат в этом репозитории. terraform apply в дирекетории с этим репозиторием => yes. (Время развёртывания инфраструктуры ~7 минут). В output выведены адреса развёрнутых ресурсов.
-2. ```
-   ssh <адресс bastion-хоста>
-   ```
-3. На bastion-хосте: 
+2. На bastion-хосте: 
    ```
    sudo nano /etc/hosts
    ```
    Вписываются адреса и хостенэймы ресурсов.
-4. На bastion-хосте:
+3. На bastion-хосте:
    ```
    ssh-keygen
    ```
-5. На bastion-хосте:
+4. На bastion-хосте:
    ```
    ssh-copy-id elastic; ssh-copy-id prom; ssh-copy-id grafana; ssh-copy-id kibana; ssh-copy-id web-1; ssh-copy-id web-2
    ```
    ( везде yes, пароль: admin )
-6. На bastion-хосте:
+5. На bastion-хосте:
    ```
    git clone https://github.com/GolgoPA/upravlenie_hostami
    ```
-7. На бастион хосте:
+6. На бастион хосте:
    ```
    cd upravlenie_hostami
    ```
-8. На бастион хосте:
+7. На бастион хосте:
    ```
    ansible-playbook elk.yaml; ansible-playbook mon.yaml; ansible-playbook webs.yaml
    ```
-9. На elastic хосте:
+8. На elastic хосте:
    ```
    sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic -i
    ```
@@ -65,7 +62,7 @@
    ```
    Скопировать сертификат.
 
-11. На kibana хосте:
+9. На kibana хосте:
     ```
     sudo mkdir /etc/kibana/certs
     ```
@@ -87,7 +84,7 @@
     ```
     sudo systemctl restart kibana
     ```
-12. На хостах web-1 и web-2:
+10. На хостах web-1 и web-2:
 
     ```
     sudo systemctl daemon-reload
@@ -116,7 +113,7 @@
     ```
 
     
-14. На хосте prom:
+11. На хосте prom:
 
     ```
     sudo nano /etc/prometheus/prometheus.yml
@@ -128,7 +125,7 @@
     sudo systemctl restart prometheus
     ```
     
-16. На web-панели grafana установить соединение с prometheus.
-17. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/).
-18. Сделать дашборд для метрик nginxlog-exporter'a.
-19. Сделать визуализацию в kibana.
+12. На web-панели grafana установить соединение с prometheus.
+13. Импортировать дашборд [dashboard](https://grafana.com/grafana/dashboards/1860-node-exporter-full/).
+14. Сделать дашборд для метрик nginxlog-exporter'a.
+15. Сделать визуализацию в kibana.
